@@ -6,11 +6,13 @@ Module to create topo and qinit data files for this example.
 from clawpack.geoclaw import topotools
 from clawpack.geoclaw.util import get_remote_file
 from numpy import *
+import os
 
 def get_topo():
     file_name = "etopo4min120E65W65S65N.asc"
-    url = "ptha@homer.u.washington.edu:CC/topo/" + file_name
-    get_remote_file(url, verbose=True)
+    cmd = "rsync -avz ptha@homer.u.washington.edu:CC/topo/%s ." % file_name
+    #get_remote_file(url, verbose=True)
+    os.system(cmd)
 
 def makeqinit():
     """

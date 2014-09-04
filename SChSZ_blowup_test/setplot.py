@@ -31,7 +31,7 @@ def setplot(plotdata):
     from clawpack.geoclaw import geoplot
 
     plotdata.clearfigures()  # clear any old figures,axes,items dat
-    plotdata.format = "binary"
+    plotdata.format = "ascii"
 
     try:
         tsudata = open(plotdata.outdir+'/geoclaw.data').readlines()

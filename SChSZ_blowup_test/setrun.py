@@ -156,7 +156,7 @@ def setrun(claw_pkg='geoclaw'):
         clawdata.output_t0 = True  # output at initial (or restart) time?
         
 
-    clawdata.output_format = 'binary'      # 'ascii', 'binary', 'netcdf'
+    clawdata.output_format = 'ascii'      # 'ascii', 'binary', 'netcdf'
 
     clawdata.output_q_components = 'all'   # could be list such as [True,True]
     clawdata.output_aux_components = 'none'  # could be list
@@ -412,7 +412,8 @@ def setgeo(rundata):
     #    [topotype, minlevel, maxlevel, t1, t2, fname]
 
     try:
-        CCdir = os.environ['CCdir']
+        #CCdir = os.environ['CCdir']
+        CCdir = '.'
     except: 
         raise Exception("You must set the environment variable CCdir")
 
