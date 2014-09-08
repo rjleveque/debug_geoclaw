@@ -211,7 +211,7 @@ def setplot(plotdata):
     latitude = -16.65
     longitude = 216.42
 
-    plotfigure = plotdata.new_plotfigure(name='x-transect', figno=21)
+    plotfigure = plotdata.new_plotfigure(name='x-transect', figno=41)
     #plotfigure.show = False
     # Set up for axes in this figure:
     plotaxes = plotfigure.new_plotaxes()

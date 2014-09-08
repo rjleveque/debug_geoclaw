@@ -21,7 +21,7 @@ def makeqinit():
     nxpoints = 101
     nypoints = 101
     xlower = 205.
-    xupper = 217.
+    xupper = 217.5
     yupper = -14.
     ylower = -22.
     outfile= "hump.xyz"     
@@ -33,10 +33,10 @@ def qinit(x,y):
     Gaussian hump:
     """
     from numpy import where
-    ze = -((x-216.)**2 + (y+15)**2)/5.
-    z = where(ze>-10., 0.5*exp(ze), 0.)
+    ze = -((x-215.5)**2 + (y+17.2)**2)
+    z = where(ze>-10., 0.5*exp(ze), 0.) - 0.2
     return z
 
 if __name__=='__main__':
     makeqinit()
-    get_topo()
+    #get_topo()

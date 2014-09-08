@@ -84,14 +84,14 @@ def setrun(claw_pkg='geoclaw'):
     clawdata.num_dim = num_dim
     
     # Lower and upper edge of computational domain:
-    clawdata.lower[0] = 205.  # 124.0          # xlower
-    clawdata.upper[0] = 218.  # 292.0          # xupper
-    clawdata.lower[1] = -22.0          # ylower
-    clawdata.upper[1] = -14.0         # yupper
+    clawdata.lower[0] = 214
+    clawdata.upper[0] = 218
+    clawdata.lower[1] = -19          # ylower
+    clawdata.upper[1] = -16.0         # yupper
     
     # Number of grid cells:
-    clawdata.num_cells[0] = 195     # mx
-    clawdata.num_cells[1] = 120     # my
+    clawdata.num_cells[0] = 60     # mx
+    clawdata.num_cells[1] = 45     # my
 
     # ---------------
     # Size of system:
@@ -121,7 +121,7 @@ def setrun(claw_pkg='geoclaw'):
     # restart_file 'fort.chkNNNNN' specified below should be in 
     # the OUTDIR indicated in Makefile.
 
-    clawdata.restart = True                # True to restart from prior results
+    clawdata.restart = False                # True to restart from prior results
     clawdata.restart_file = 'fort.chk07323'  # File to use for restart data
     
     
@@ -132,13 +132,13 @@ def setrun(claw_pkg='geoclaw'):
     # Specify at what times the results should be written to fort.q files.
     # Note that the time integration stops after the final output time.
  
-    clawdata.output_style = 3
+    clawdata.output_style = 1
  
     if clawdata.output_style==1:
         # Output ntimes frames at equally spaced times up to tfinal:
         # Can specify num_output_times = 0 for no output
-        clawdata.num_output_times = 1
-        clawdata.tfinal = 41*3600
+        clawdata.num_output_times = 6
+        clawdata.tfinal = 60*3600
         clawdata.output_t0 = True  # output at initial (or restart) time?
         
     elif clawdata.output_style == 2:
@@ -419,8 +419,9 @@ def setgeo(rundata):
 
     # BELOW FOR CHILE RUN
     #new topo file in CCptha2:
-    topofiles.append([3, 1, 1, 0., 1.e10, \
-                              CCdir + '/topo/etopo4min120E65W65S65N.asc'])
+    topofiles.append([3, 1, 1, 0., 1.e10, 'small_topo.tt3'])
+
+                              #CCdir + '/topo/etopo4min120E65W65S65N.asc'])
 
 
     # == setdtopo.data values ==
