@@ -84,13 +84,13 @@ def setrun(claw_pkg='geoclaw'):
     clawdata.num_dim = num_dim
     
     # Lower and upper edge of computational domain:
-    clawdata.lower[0] = 215
-    clawdata.upper[0] = 218
+    clawdata.lower[0] = 215+7/15.
+    clawdata.upper[0] = 217+8/15.
     clawdata.lower[1] = -17-7/15.          # ylower
     clawdata.upper[1] = -16.0         # yupper
     
     # Number of grid cells:
-    clawdata.num_cells[0] = 45     # mx
+    clawdata.num_cells[0] = 31     # mx
     clawdata.num_cells[1] = 22     # my
 
     # ---------------
