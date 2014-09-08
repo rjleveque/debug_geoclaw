@@ -258,7 +258,7 @@ def setplot(plotdata):
 
     plotitem = plotaxes.new_plotitem(plot_type='1d_from_2d_data')
     plotitem.map_2d_to_1d = slice_x
-    plotitem.color = 'b'
+    plotitem.plotstyle = 'bo'
 
     def B_x(current_data):
         from pylab import find,ravel
