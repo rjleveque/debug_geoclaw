@@ -121,8 +121,8 @@ def setrun(claw_pkg='geoclaw'):
     # restart_file 'fort.chkNNNNN' specified below should be in 
     # the OUTDIR indicated in Makefile.
 
-    clawdata.restart = False                # True to restart from prior results
-    clawdata.restart_file = 'fort.chk07323'  # File to use for restart data
+    clawdata.restart = True               # True to restart from prior results
+    clawdata.restart_file = 'fort.chk00812'  # File to use for restart data
     
     
     # -------------
@@ -132,13 +132,13 @@ def setrun(claw_pkg='geoclaw'):
     # Specify at what times the results should be written to fort.q files.
     # Note that the time integration stops after the final output time.
  
-    clawdata.output_style = 1
+    clawdata.output_style = 3
  
     if clawdata.output_style==1:
         # Output ntimes frames at equally spaced times up to tfinal:
         # Can specify num_output_times = 0 for no output
-        clawdata.num_output_times = 20
-        clawdata.tfinal = 20*3600
+        clawdata.num_output_times = 1
+        clawdata.tfinal = 4*3600
         clawdata.output_t0 = True  # output at initial (or restart) time?
         
     elif clawdata.output_style == 2:
@@ -152,7 +152,7 @@ def setrun(claw_pkg='geoclaw'):
     elif clawdata.output_style == 3:
         # Output every step_interval timesteps over total_steps timesteps:
         clawdata.output_step_interval = 1
-        clawdata.total_steps = 7323+10
+        clawdata.total_steps = 812+10
         clawdata.output_t0 = True  # output at initial (or restart) time?
         
 
@@ -274,7 +274,7 @@ def setrun(claw_pkg='geoclaw'):
     # Specify when checkpoint files should be created that can be
     # used to restart a computation.
 
-    clawdata.checkpt_style = 1
+    clawdata.checkpt_style = 3
 
     if clawdata.checkpt_style == 0:
       # Do not checkpoint at all
@@ -291,7 +291,7 @@ def setrun(claw_pkg='geoclaw'):
     elif clawdata.checkpt_style == 3:
       # Checkpoint every checkpt_interval timesteps (on Level 1)
       # and at the final time.
-      clawdata.checkpt_interval = 5
+      clawdata.checkpt_interval = 1
 
     
 
