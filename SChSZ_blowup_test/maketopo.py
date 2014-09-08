@@ -33,8 +33,8 @@ def qinit(x,y):
     Gaussian hump:
     """
     from numpy import where
-    ze = -((x-215.5)**2 + (y+17.2)**2)
-    z = where(ze>-10., 0.5*exp(ze), 0.) - 0.2
+    ze = -((x-215.5)**2 + (y+17.2)**2)*10.
+    z = 10*where(ze>-10., 0.5*exp(ze), 0.) - 0.2
     return z
 
 if __name__=='__main__':
